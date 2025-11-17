@@ -7,7 +7,7 @@ extends CharacterBody3D
 @export var ACCEL := 100.0         # 地面加速度
 @export var IN_AIR_SPEED := 25.0    # 空中最大速度
 @export var IN_AIR_ACCEL := 400.0   # 空中加速度
-@export var JUMP_VELOCITY := 12.0   # 跳跃初速度
+@export var JUMP_VELOCITY := 18.0   # 跳跃初速度
 
 # --------------------
 # Gravity Settings
