@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpopy1inxwk8"]
+
+[ext_resource type="PackedScene" uid="uid://d0wqikgs8dvva" path="res://abandoned_house.tscn" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://cgw3jvqymdprq" path="res://character_body_3d.gd" id="3_lquwl"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lquwl"]
+radius = 0.3515625
+height = 2.2328033
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Abandoned_House" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(9.07, 0, 0, 0, 9.07, 0, 0, 0, 9.07, 0, 0, 0)
+
+[node name="DirectionalLight3D3" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.7847764, -0.5132144, -0.34747228, 0, -0.560639, 0.8280603, -0.619779, -0.6498422, -0.43997627, 99.996826, 100.94763, -497.8307)
+light_color = Color(0.019607844, 0.14901961, 0.09803922, 1)
+light_indirect_energy = 1.742
+light_volumetric_fog_energy = 0.67
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.013962129, 0.82699984, 0.56202877, 0, -0.56208354, 0.8270804, 0.99990255, -0.011547804, -0.007847883, -318.93332, 152.36087, -849.0569)
+light_color = Color(0.019607844, 0.14901961, 0.09803922, 1)
+light_energy = 0.34
+light_indirect_energy = 1.742
+light_volumetric_fog_energy = 0.67
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8028175, -0.31506807, 0.506178, 0, 0.8489717, 0.5284383, -0.59622484, 0.42423955, -0.6815694, -365.08047, 150.43983, -242.5245)
+light_color = Color(0.019607844, 0.14901961, 0.09803922, 1)
+light_indirect_energy = 1.742
+light_volumetric_fog_energy = 0.67
+
+[node name="DirectionalLight3D4" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.6717207, -0.31658867, 0.6697485, 7.903741e-08, 0.9040826, 0.4273578, -0.74080455, -0.287065, 0.607291, -718.4494, 100.94763, -497.8307)
+light_color = Color(0.019607844, 0.14901961, 0.09803922, 1)
+light_indirect_energy = 1.742
+light_volumetric_fog_energy = 0.67
+
+[node name="DirectionalLight3D5" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.26339084, -0.9541303, 0.14234053, 0.016787771, -0.15206173, -0.98822844, 0.96454316, -0.25790074, 0.05606938, -414.51852, -133.19408, -522.75073)
+light_color = Color(0.019607844, 0.14901961, 0.09803922, 1)
+light_energy = 0.422
+light_indirect_energy = 1.742
+light_volumetric_fog_energy = 0.67
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -257, 13.657005, -469.11)
+script = ExtResource("3_lquwl")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.063534, -0.45013428)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.97553456, 0.2198462, 0, -0.2198462, 0.97553456, 0, -1.8846397, 0.45013428)
+light_color = Color(0.99607843, 1, 0.92156863, 1)
+light_energy = 1.319
+light_volumetric_fog_energy = 4.216
+light_size = 0.165
+spot_range = 59.419
+spot_attenuation = -0.24
+spot_angle = 37.91
+
+[node name="Head" type="Node3D" parent="CharacterBody3D"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(6.86, 0, 0, 0, 6.86, 0, 0, 0, 6.86, -0.7660217, -2.3618832, 0.6302185)
+shape = SubResource("CapsuleShape3D_lquwl")
