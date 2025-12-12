@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://chct02kf1l31v"]
+
+[ext_resource type="Script" uid="uid://eta1xv2u7tat" path="res://proof.gd" id="1_aawon"]
+
+[node name="proof" type="Area3D"]
+script = ExtResource("1_aawon")
+
+[node name="name" type="Label3D" parent="."]
