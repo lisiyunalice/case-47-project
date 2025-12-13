@@ -6,3 +6,4 @@
 script = ExtResource("1_aawon")
 
 [node name="name" type="Label3D" parent="."]
+font_size = 256

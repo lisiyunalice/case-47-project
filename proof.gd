@@ -9,4 +9,6 @@ func _ready():
 
 func showname():
 	$name.text = proof_name
+	$desc.text = proof_description
 	$name.show()
+	$desc.show()
