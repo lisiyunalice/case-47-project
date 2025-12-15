@@ -39,6 +39,13 @@ extends CharacterBody3D
 var rotation_target_player := 0.0
 var rotation_target_camera := 0.0
 
+
+var dialogue_locked := false
+
+func set_dialogue_mode(active: bool) -> void:
+	dialogue_locked = active
+
+
 # --------------------
 func _ready():
 	# 鼠标捕获
@@ -46,11 +53,14 @@ func _ready():
 
 # --------------------
 func _physics_process(delta):
+	if dialogue_locked:
+		return
 	move_player(delta)
 	rotate_player(delta)
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		if raycast.is_colliding():
 			var _obj = raycast.get_collider()
+
 
 # --------------------
 func _input(event):
@@ -75,6 +85,7 @@ func move_player(delta):
 	# Jump
 	if is_on_floor() and Input.is_action_just_pressed(KEY_BIND_JUMP):
 		velocity.y = JUMP_VELOCITY
+		
 
 	# Input direction
 	var input_dir = Input.get_vector(KEY_BIND_LEFT, KEY_BIND_RIGHT, KEY_BIND_UP, KEY_BIND_DOWN)
@@ -107,10 +118,10 @@ func rotate_player(delta):
 			
 	#raycast
 
-
-# ========== 证物栏相关 ==========
-var collected_proofs: Array = []    # 存放 proof_id
-var proof_icon_dict = {}            # 你以后再加图标
+#
+## ========== 证物栏相关 ==========
+#var collected_proofs: Array = []    # 存放 proof_id
+#var proof_icon_dict = {}            # 你以后再加图标
 
 @onready var raycast = $Camera3D/RayCast3D                         # 注意：在 CharacterBody3D 下
 @onready var crosshair = $"../CanvasLayer/crosshair"         # CanvasLayer 是 CharacterBody3D 的兄弟节点
@@ -133,8 +144,10 @@ func get_look_at_proof():
 		
 
 # ========== 准心高亮 ==========
-func update_crosshair(target):
-	if target:
-		crosshair.modulate = Color(1, 1, 0.6)
-	else:
-		crosshair.modulate = Color.WHITE
+#func update_crosshair(target):
+	#if target:
+		#crosshair.modulate = Color(1, 1, 0.6)
+	#else:
+		#crosshair.modulate = Color.WHITE
+		
+		

@@ -1,3 +1,20 @@
+extends RayCast3D
+
+var current_object
+
+func _physics_process(_delta: float) -> void:
+	var thing = get_collider()
+	if thing:
+		if thing.is_in_group('proof'):
+			thing.show_text()
+			current_object = thing
+	else:
+		if current_object:
+			current_object.hide_text()
+			current_object = null
+
+
+
 #extends RayCast3D
 #
 #var current_label: Label3D = null
@@ -60,55 +77,55 @@
 
 
 #可显示knife label的版本
-extends RayCast3D
-
-var current_label: Label3D = null
-
-func _ready():
-	enabled = true
-
-	# 开局强制隐藏所有 hover_label
-	for node in get_tree().get_nodes_in_group("hover_label"):
-		if node is Label3D:
-			node.visible = false
-
-func _process(_delta):
-	update_hover()
-
-func update_hover():
-	var hit_label = get_hover_label()
-
-	if hit_label != current_label:
-		if current_label:
-			current_label.visible = false
-
-		current_label = hit_label
-		if current_label:
-			current_label.visible = true
-
-func get_hover_label() -> Label3D:
-	if not is_colliding():
-		return null
-
-	var collider = get_collider()
-
-	if collider:
-		var label = _find_hover_label_recursive(collider)
-		if label:
-			return label
-
-	return null
-
-func _find_hover_label_recursive(node: Node) -> Label3D:
-	if node is Label3D and node.is_in_group("hover_label"):
-		return node
-
-	for child in node.get_children():
-		var found = _find_hover_label_recursive(child)
-		if found:
-			return found
-
-	return null
+#extends RayCast3D
+#
+#var current_label: Label3D = null
+#
+#func _ready():
+	#enabled = true
+#
+	## 开局强制隐藏所有 hover_label
+	#for node in get_tree().get_nodes_in_group("hover_label"):
+		#if node is Label3D:
+			#node.visible = false
+#
+#func _process(_delta):
+	#update_hover()
+#
+#func update_hover():
+	#var hit_label = get_hover_label()
+#
+	#if hit_label != current_label:
+		#if current_label:
+			#current_label.visible = false
+#
+		#current_label = hit_label
+		#if current_label:
+			#current_label.visible = true
+#
+#func get_hover_label() -> Label3D:
+	#if not is_colliding():
+		#return null
+#
+	#var collider = get_collider()
+#
+	#if collider:
+		#var label = _find_hover_label_recursive(collider)
+		#if label:
+			#return label
+#
+	#return null
+#
+#func _find_hover_label_recursive(node: Node) -> Label3D:
+	#if node is Label3D and node.is_in_group("hover_label"):
+		#return node
+#
+	#for child in node.get_children():
+		#var found = _find_hover_label_recursive(child)
+		#if found:
+			#return found
+#
+	#return null
 #-----------------------------------------------------------
 
 ##检测有没有碰撞到（可以删）
