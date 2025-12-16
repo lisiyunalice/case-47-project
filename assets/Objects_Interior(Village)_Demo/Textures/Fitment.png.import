@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnq2cdec8igkd"
-path.s3tc="res://.godot/imported/Fitment.png-7ccb474ec1d10594ea659aa002534e02.s3tc.ctex"
+path.s3tc="res://.godot/imported/Fitment.png-fa08f6e22ed37cfb96d2669513f71fc2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Objects_Interior(Village)_Demo/textures/Fitment.png"
-dest_files=["res://.godot/imported/Fitment.png-7ccb474ec1d10594ea659aa002534e02.s3tc.ctex"]
+source_file="res://assets/Objects_Interior(Village)_Demo/Textures/Fitment.png"
+dest_files=["res://.godot/imported/Fitment.png-fa08f6e22ed37cfb96d2669513f71fc2.s3tc.ctex"]
 
 [params]
 

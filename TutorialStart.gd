@@ -192,7 +192,7 @@ func start_intro_dialogue() -> void:
 		},
 		{
 			"speaker": "You",
-			"text": "(Use WASD to move, Space to jump. Hover above any suspicious object to see what it is, and click it to collect. Remember, you can only remember 3 objects simultaneously, and HURRY...you only have 10 mintues...)"
+			"text": "(Use WASD to move, Space to jump. Hover above any suspicious object to see what it is, and click it to write down. Remember, you can only remember 3 objects simultaneously, and HURRY...you only have 10 mintues...)"
 		},
 		{
 			"speaker": "You",

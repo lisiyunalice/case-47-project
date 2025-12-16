@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bt0kkw1q2k4fy"
-path.s3tc="res://.godot/imported/Cereal_bowl.png-c042bcba72b6a0c6e23cf5e21322925f.s3tc.ctex"
+path.s3tc="res://.godot/imported/Cereal_bowl.png-51042add1b2afdb7efef87ee5490a6c2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Objects_Interior(Village)_Demo/textures/Cereal_bowl.png"
-dest_files=["res://.godot/imported/Cereal_bowl.png-c042bcba72b6a0c6e23cf5e21322925f.s3tc.ctex"]
+source_file="res://assets/Objects_Interior(Village)_Demo/Textures/Cereal_bowl.png"
+dest_files=["res://.godot/imported/Cereal_bowl.png-51042add1b2afdb7efef87ee5490a6c2.s3tc.ctex"]
 
 [params]
 
