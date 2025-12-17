@@ -1,5 +1,7 @@
 extends Control
 
+signal dialogue_finished
+
 @onready var name_label: Label = $Panel/NameLabel
 @onready var dialogue_label: Label = $Panel/DialogueLabel
 @onready var portrait_npc: TextureRect = $PortraitNPC
@@ -56,8 +58,11 @@ func next_line() -> void:
 func end_dialogue() -> void:
 	active = false
 	visible = false
+	hide()
+	emit_signal("dialogue_finished")
 
 	if player:
 		player.set_dialogue_mode(false)
 
 	player = null
+	
